@@ -36,6 +36,8 @@ gem "figaro"
 
 gem "fog", "~> 1.3.1"
 
+gem 'mini_magick'
+
 gem 'simple_form'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

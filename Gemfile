@@ -29,16 +29,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
-
 gem 'carrierwave'
-
 gem "figaro"
-
 gem "fog", "~> 1.3.1"
-
 gem 'mini_magick'
-
 gem 'simple_form'
+gem 'carrierwave-aws'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

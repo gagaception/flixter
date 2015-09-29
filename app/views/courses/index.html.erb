@@ -4,7 +4,8 @@
 	<h1 class="text-center">Learn something today</h1>
 	<br />
 	<% @courses.each do |course| %>
-	    <%= image_tag course.image, :class => 'img_responsive' %>
+	    <div class="col-xs-3"><%= image_tag course.image, :class => 'img_responsive' %></div>
+	    <div class="col-xs-9">
 		<h2 class="text-center">
 		<%= link_to course.title, course_path(course) %>
 		</h2>
@@ -15,5 +16,9 @@
 			<%= link_to 'More Details...', course_path(course), :class =>'btn btn-primary btn-large' %>
 		</div>
 		<br class="clr" />
+		</div>
+
+		<br class="clr" />
+			<br />
 	<% end %>
 </div>

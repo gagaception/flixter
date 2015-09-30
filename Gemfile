@@ -36,6 +36,7 @@ gem 'mini_magick'
 gem 'simple_form'
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'ranked-model'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -37,22 +37,38 @@
    <br />
   <%= link_to 'Preview As Student...', course_path(current_course), :class => 'btn btn-warning pull-right' %>
   <br class="clr" />
-  
+  <hr />
   <div class="text-center">
   	<%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), :class => 'btn btn-success' %>
   </div>
+  <br />
 
   <ul class="sections">
-  	<% current_course.sections.rank(:row_order).each do |section| %>
-  		<li data-update-url=<%= instructor_section_path(section) %>>
+   	<% current_course.sections.rank(:row_order).each do |section| %>
+  		<li data-update-url="<%= instructor_section_path section %>" class="section-li">
+      <div class="header">
+      <span class="glyphicon glyphicon-option-vertical"></span>
   			<%= section.title %>
+      </div>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), :class => 'pull-roght btn btn-success btn-xs'%>
+        <br class="clr" />
+        <br class="clr" />
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <li data-update-url=<%= instructor_lesson_path(lesson) %>>
-              <b><%= lesson.title %></b>
-              -
-              <%= lesson.subtitle %>
+            <li data-update-url="<%= instructor_lesson_path lesson %>">
+            <div class="col-xs-1">
+            
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </div>
+            <div class="col-xs-11 text-center">
+              <p>
+                <b><%= lesson.title %></b>
+              </p>
+              <p>
+                <%= lesson.subtitle %>
+              </p>
+            </div>
+            <br class="clr" />
             </li>
             <% end %>
         </ul>
@@ -60,4 +76,5 @@
   		</li>
   	<% end %>
   </ul>
+  
 </div>
